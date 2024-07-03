@@ -1,0 +1,25 @@
+name: Backend - PR
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Check formatting
+        run: cargo fmt --check
+        working-directory: ./backend
+
+      - name: Build
+        run: cargo build --verbose
+        working-directory: ./backend
+
+      - name: Run tests
+        run: cargo test --verbose
+        working-directory: ./backend
