@@ -1,7 +1,7 @@
 use config::{Config, ConfigError, Environment};
 use serde::Deserialize;
 
-use crate::config::server_config::ServerConfig;
+use crate::config::common_config::CommonConfig;
 
 /// The prefix used for this application's environment variables.
 const CONFIG_PREFIX: &str = "GAMEHUB";
@@ -27,8 +27,8 @@ const CONFIG_SEPARATOR: &str = "__";
 #[derive(Deserialize, Eq, PartialEq, Debug)]
 /// Represents a root application configuration.
 pub struct ApplicationConfig {
-    /// The main server configuration of the application.
-    pub server: ServerConfig,
+    /// The common configuration of the application.
+    pub common: CommonConfig,
 }
 
 impl ApplicationConfig {
@@ -45,20 +45,23 @@ impl ApplicationConfig {
 
 mod tests {
     use crate::config::application_config::ApplicationConfig;
+    use crate::config::common_config::CommonConfig;
     use crate::config::server_config::ServerConfig;
 
     #[test]
     fn from_environment_parses_application_config() {
         let server_host = String::from("test_host");
-        std::env::set_var("GAMEHUB__SERVER__HOST", &server_host);
+        std::env::set_var("GAMEHUB__COMMON__SERVER__HOST", &server_host);
 
         let server_port = 1234;
-        std::env::set_var("GAMEHUB__SERVER__PORT", server_port.to_string());
+        std::env::set_var("GAMEHUB__COMMON__SERVER__PORT", server_port.to_string());
 
         let expected_config = ApplicationConfig {
-            server: ServerConfig {
-                host: server_host,
-                port: server_port,
+            common: CommonConfig {
+                server: ServerConfig {
+                    host: server_host,
+                    port: server_port,
+                },
             },
         };
 
