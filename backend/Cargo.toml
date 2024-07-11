@@ -5,6 +5,9 @@ edition = "2021"
 
 [dependencies]
 axum = { version = "0.7.5", features = ["ws"] }
+chrono = "0.4.38"
 config = "0.14.0"
+id_token_verifier = { git = "https://github.com/yevtyushkin/libs" }
 serde = "1.0.203"
 tokio = { version = "1.38.0", features = ["full"] }
+url = "2.5.2"
