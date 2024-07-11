@@ -4,6 +4,7 @@ use tokio::net::TcpListener;
 use crate::config::application_config::ApplicationConfig;
 use crate::health_check::health_check_routes::health_check_routes;
 
+mod auth;
 mod config;
 mod health_check;
 
