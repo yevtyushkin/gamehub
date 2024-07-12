@@ -7,6 +7,7 @@ use crate::health_check::health_check_routes::health_check_routes;
 mod auth;
 mod config;
 mod health_check;
+mod player;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
