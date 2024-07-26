@@ -5,6 +5,7 @@ use serde::Deserialize;
 
 /// Represents a secret part of the configuration.
 #[derive(Deserialize, Eq, PartialEq)]
+#[serde(transparent)]
 pub struct SecretConfig<T> {
     /// The wrapped value of this secret config.
     pub value: T,

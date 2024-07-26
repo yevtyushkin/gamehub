@@ -11,8 +11,14 @@ variables used by this application:
 
 | Name                                                                | Description                                                              | Example                                                      |
 |---------------------------------------------------------------------|--------------------------------------------------------------------------|--------------------------------------------------------------|
-| GAMEHUB__SERVER__HOST                                               | The server host of this application.                                     | 0.0.0.0, localhost                                           |
-| GAMEHUB__SERVER__PORT                                               | The server port of this application.                                     | 1234, 8000                                                   |
+| GAMEHUB__COMMON__SERVER__HOST                                       | The server host of this application.                                     | 0.0.0.0, localhost                                           |
+| GAMEHUB__COMMON__SERVER__PORT                                       | The server port of this application.                                     | 1234, 8000                                                   |
+| GAMEHUB__COMMON__POSTGRES__HOST                                     | The postgres host of this application.                                   | 0.0.0.0, localhost                                           |
+| GAMEHUB__COMMON__POSTGRES__PORT                                     | The postgres port of this application.                                   | 5432, 5433                                                   |
+| GAMEHUB__COMMON__POSTGRES__DATABASE                                 | The postgres database name of this application.                          | gamehub                                                      |
+| GAMEHUB__COMMON__POSTGRES__USERNAME                                 | The postgres username of this application.                               | username                                                     |
+| GAMEHUB__COMMON__POSTGRES__PASSWORD                                 | The postgres password of this application.                               | password                                                     |
+| GAMEHUB__COMMON__POSTGRES__MAX_CONNECTIONS                          | The maximum number of postgres connections of this application.          | 16, 32                                                       |
 | GAMEHUB__AUTH__GOOGLE_ID_TOKEN_VERIFIER__JWKS_URI_TYPE              | The JWKS URI type of the Google ID token verifier.                       | Direct, AutoDiscover                                         |
 | GAMEHUB__AUTH__GOOGLE_ID_TOKEN_VERIFIER__JWKS_URI                   | The JWKS URI of the Google ID token verifier.                            | https://accounts.google.com/.well-known/openid-configuration |
 | GAMEHUB__AUTH__GOOGLE_ID_TOKEN_VERIFIER__JWKS_MAX_AGE               | The max age of entries of the Google ID token verifier's JWKS cache.     | 3600 (1 hour), None                                          |

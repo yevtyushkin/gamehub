@@ -49,6 +49,8 @@ mod tests {
     use crate::auth::config::auth_config::AuthConfig;
     use crate::config::application_config::ApplicationConfig;
     use crate::config::common_config::CommonConfig;
+    use crate::config::postgres_config::PostgresConfig;
+    use crate::config::secret_config::SecretConfig;
     use crate::config::server_config::ServerConfig;
     use chrono::TimeDelta;
     use id_token_verifier::prelude::{IdTokenVerifierConfig, JwksUriType};
@@ -60,6 +62,22 @@ mod tests {
         std::env::set_var("GAMEHUB__COMMON__SERVER__HOST", &server_host);
         let server_port = 1234;
         std::env::set_var("GAMEHUB__COMMON__SERVER__PORT", server_port.to_string());
+
+        let postgres_host = String::from("postgres_host");
+        std::env::set_var("GAMEHUB__COMMON__POSTGRES__HOST", &postgres_host);
+        let postgres_port = 5432;
+        std::env::set_var("GAMEHUB__COMMON__POSTGRES__PORT", postgres_port.to_string());
+        let postgres_database = String::from("postgres_database_name");
+        std::env::set_var("GAMEHUB__COMMON__POSTGRES__DATABASE", &postgres_database);
+        let postgres_username = String::from("user");
+        std::env::set_var("GAMEHUB__COMMON__POSTGRES__USERNAME", &postgres_username);
+        let postgres_password = String::from("password");
+        std::env::set_var("GAMEHUB__COMMON__POSTGRES__PASSWORD", &postgres_password);
+        let postgres_max_connections = 1337;
+        std::env::set_var(
+            "GAMEHUB__COMMON__POSTGRES__MAX_CONNECTIONS",
+            postgres_max_connections.to_string(),
+        );
 
         let auth_google_id_token_verifier_jwks_uri_type = "AutoDiscover";
         std::env::set_var(
@@ -100,6 +118,16 @@ mod tests {
                 server: ServerConfig {
                     host: server_host,
                     port: server_port,
+                },
+                postgres: PostgresConfig {
+                    host: postgres_host,
+                    port: postgres_port,
+                    database: postgres_database,
+                    username: postgres_username,
+                    password: SecretConfig {
+                        value: postgres_password,
+                    },
+                    max_connections: postgres_max_connections,
                 },
             },
             auth: AuthConfig {
