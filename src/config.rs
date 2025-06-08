@@ -12,6 +12,7 @@ pub struct Config {
 
 impl Config {
     /// Loads [Config] from environment variables.
+    #[allow(clippy::result_large_err)]
     pub fn from_env() -> figment::Result<Config> {
         figment::Figment::new()
             .merge(Env::raw().split("__"))
