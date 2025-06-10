@@ -1,0 +1,25 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n                insert into third_party_sign_in_method (provider, user_id, player_id)\n                values ($1, $2, $3)\n                ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        {
+          "Custom": {
+            "name": "third_party_sign_in_provider",
+            "kind": {
+              "Enum": [
+                "Google"
+              ]
+            }
+          }
+        },
+        "Text",
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "30e3c8d300aded5d528e472580fdb93bac505807dfefd1899e9204fc2ff04200"
+}

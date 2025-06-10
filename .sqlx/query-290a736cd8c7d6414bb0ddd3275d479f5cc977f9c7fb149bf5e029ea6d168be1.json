@@ -1,0 +1,16 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            insert into player (id, screen_name, joined_at)\n            values ($1, $2, $3)\n            ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Varchar",
+        "Timestamptz"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "290a736cd8c7d6414bb0ddd3275d479f5cc977f9c7fb149bf5e029ea6d168be1"
+}

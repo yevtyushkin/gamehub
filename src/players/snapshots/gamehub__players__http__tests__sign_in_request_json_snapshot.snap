@@ -1,0 +1,9 @@
+---
+source: src/players/http.rs
+expression: "&SignInRequest::test_google()"
+---
+{
+  "Google": {
+    "id_token": "test-id-token"
+  }
+}

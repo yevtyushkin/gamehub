@@ -8,6 +8,9 @@ on:
     branches:
       - main
 
+env:
+  SQLX_OFFLINE: true
+
 jobs:
   build:
     runs-on: ubuntu-latest

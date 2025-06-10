@@ -1,0 +1,7 @@
+---
+source: src/players/http.rs
+expression: "&SignInResponse::test()"
+---
+{
+  "auth_token": "auth_token"
+}

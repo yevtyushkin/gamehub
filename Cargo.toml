@@ -7,10 +7,23 @@ edition = "2024"
 anyhow = "1.0.98"
 axum = { version = "0.8.4", features = ["ws"] }
 axum-test = "17.3.0"
+chrono = { version = "0.4.41", features = ["serde"] }
 derive_more = { version = "2.0.1", features = ["full"] }
+duration-str = { version = "0.17.0", features = ["chrono"] }
 figment = { version = "0.10.19", features = ["env", "test"] }
+id_token_verifier = { version = "0.1.1", features = ["tracing"] }
+jsonwebtoken = "9.3.1"
+petname = "2.0.2"
+reqwest = "0.12.19"
 serde = { version = "1.0.219", features = ["derive"] }
 sqlx = { version = "0.8.6", features = ["chrono", "postgres", "runtime-tokio", "uuid"] }
+thiserror = "2.0.12"
 tokio = { version = "1.45.1", features = ["full"] }
 tracing = "0.1.41"
 tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+uuid = { version = "1.17.0", features = ["serde", "v7"] }
+
+[dev-dependencies]
+getset = "0.1.5"
+insta = { version = "1.43.1", features = ["json"] }
+mockall = "0.13.1"

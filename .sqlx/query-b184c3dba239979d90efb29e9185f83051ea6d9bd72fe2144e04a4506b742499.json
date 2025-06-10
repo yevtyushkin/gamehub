@@ -1,0 +1,44 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n                select\n                    p.id as \"id: PlayerId\",\n                    p.screen_name as \"screen_name: PlayerScreenName\",\n                    p.joined_at as \"joined_at: PlayerJoinedAt\"\n                from player p\n                join third_party_sign_in_method t on p.id = t.player_id\n                where t.provider = $1 and t.user_id = $2\n                ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id: PlayerId",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 1,
+        "name": "screen_name: PlayerScreenName",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 2,
+        "name": "joined_at: PlayerJoinedAt",
+        "type_info": "Timestamptz"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        {
+          "Custom": {
+            "name": "third_party_sign_in_provider",
+            "kind": {
+              "Enum": [
+                "Google"
+              ]
+            }
+          }
+        },
+        "Text"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "b184c3dba239979d90efb29e9185f83051ea6d9bd72fe2144e04a4506b742499"
+}

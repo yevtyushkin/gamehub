@@ -1,0 +1,9 @@
+---
+source: src/players/player.rs
+expression: "&Player::test()"
+---
+{
+  "id": "00000000-0000-0000-0000-0000499602d2",
+  "screen_name": "test-screen-name",
+  "joined_at": "1970-01-01T00:00:00Z"
+}
