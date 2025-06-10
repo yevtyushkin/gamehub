@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: gamehub_postgres_local_user
+      POSTGRES_PASSWORD: gamehub_postgres_local_password
+      POSTGRES_DB: gamehub_postgres_local_db
+    ports:
+      - "127.0.0.1:5432:5432"

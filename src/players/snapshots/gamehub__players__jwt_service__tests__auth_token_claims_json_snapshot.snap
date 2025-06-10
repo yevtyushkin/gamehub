@@ -1,0 +1,9 @@
+---
+source: src/players/jwt_service.rs
+expression: "&AuthTokenClaims::test()"
+---
+{
+  "exp": 123,
+  "iat": 456,
+  "sub": "00000000-0000-0000-0000-0000499602d2"
+}

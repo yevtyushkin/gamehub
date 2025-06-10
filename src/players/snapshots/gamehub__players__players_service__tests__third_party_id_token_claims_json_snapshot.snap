@@ -1,0 +1,7 @@
+---
+source: src/players/players_service.rs
+expression: "&ThirdPartyIdTokenClaims::test()"
+---
+{
+  "sub": "test-user-id"
+}

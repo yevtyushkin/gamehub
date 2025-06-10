@@ -1,0 +1,34 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n            select\n                id as \"id: PlayerId\",\n                screen_name as \"screen_name: PlayerScreenName\",\n                joined_at as \"joined_at: PlayerJoinedAt\"\n            from player\n            where id = $1\n            ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id: PlayerId",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 1,
+        "name": "screen_name: PlayerScreenName",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 2,
+        "name": "joined_at: PlayerJoinedAt",
+        "type_info": "Timestamptz"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "e2912fc1f2564a9e89513da07b33481b755872ed058b028b6685f31260706b15"
+}
