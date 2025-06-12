@@ -11,6 +11,7 @@ mod app_state;
 mod config;
 mod healthcheck;
 mod players;
+mod game;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
